@@ -1,0 +1,65 @@
+<div class="">
+    <div class="row editProfile col-12">
+        <h4>Edit Profile</h4>
+        <form action="" class="">
+          <div class="form-group">
+              <img [src]="EditProfile.url" class="PersonPic" alt="avatar">
+              <input type="file" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+              <input type="name" class="form-control" id="exampleInputName1" aria-describedby=""
+              [(ngModel)]="EditProfile.name" name="name">
+          </div>
+          <div class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby=""
+              [(ngModel)]="EditProfile.email" name="email">
+          </div>
+          <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1"
+            [(ngModel)]="EditProfile.city" name="city">
+              <option active disabled>City</option>
+              <option>Alexandria</option>
+              <option>Aswan</option>
+              <option>Asyut</option>
+              <option>Beheira</option>
+              <option>Beni Suef</option>
+              <option>Cairo</option>
+              <option>Dakahlia</option>
+              <option>Damietta</option>
+              <option>Faiyum</option>
+              <option>Gharbia</option>
+              <option>Giza</option>
+              <option>Ismailia</option>
+              <option>Kafr El Sheikh</option>
+              <option>Luxor</option>
+              <option>Matruh</option>
+              <option>Minya</option>
+              <option>Monufia</option>
+              <option>New Valley</option>
+              <option>North Sinai</option>
+              <option>Port Said</option>
+              <option>Qalyubia</option>
+              <option>Qena</option>
+              <option>Red Sea</option>
+              <option>Sharqia</option>
+              <option>Sohag</option>
+              <option>South Sinai</option>
+              <option>Suez</option>
+            </select>
+        </div>
+          <div class="form-group">
+              <input type="password" class="form-control" id="exampleInputOPW1" aria-describedby=""
+              [(ngModel)]="EditProfile.password" name="password">
+          </div>
+          <div class="form-group">
+              <input type="password" class="form-control" id="exampleInputNPW1" aria-describedby="" 
+              placeholder="Confirm New password" [(ngModel)]="EditProfile.c_password" name="c_password">
+          </div>
+
+        </form>
+        <a class="save" value="Submit" [routerLink]="['/home']" on-click="Edit()">Save</a>
+        <a class="cancel" value="Reset">Cancel</a>
+
+    </div>
+  </div>
+  

@@ -1,0 +1,116 @@
+
+<!--===============================HEADER START============================-->
+
+<mat-toolbar [style.padding-left.px] = "paddingtoolp">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" [routerLink]="['/home']">Logo</a>
+        <ul class="nav ml-auto">
+            <form class="form-inline my-2 my-lg-0 search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <li class="nav-item icons">
+                <a class="nav-link search" href="#">
+                    <i class=" ion ion-ios-search-strong search-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item icons">
+                <a class="nav-link" href="#">
+                    <i class="ion ion-android-notifications-none noti-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link drop" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="http://via.placeholder.com/40x40" class="rounded-circle" alt="">
+                </a>
+                <div class="dropdownContain" aria-labelledby="navbarDropdown">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li [routerLink]="['/login']">
+                                <i class=" ion ion-log-in icon"></i>
+                                <a class="drop-item" >Login</a>
+                            </li>
+                            <li  [routerLink]="['/signup']">
+                                <i class="ion ion-compose icon"></i>
+                                <a class="drop-item" >Signup</a>
+                            </li>
+                            <li [routerLink]="['/profile']">
+                                <i class="ion ion-person icon"></i>
+                                <a class="drop-item">Profile</a>
+                            </li>
+                            <li [routerLink]="['/search-result']">
+                                <i class="ion ion-gear-a icon"></i>
+                                <a class="drop-item">Settings</a>
+                            </li>
+                            <li>
+                                <i class="ion ion-log-out icon"></i>
+                                <a class="drop-item">Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</mat-toolbar>
+
+<!--===============================HEADER END============================-->
+
+<!--===============================SIDE NAV START============================-->
+<mat-sidenav-container class="side" >
+    <mat-sidenav  #sidenav mode="{{navMode}}" opened="true" class="app-sidenav"
+         [style.width.px]="navwidth" 
+         [style.padding-left.px] = "padding"
+         [style.box-shadow]="shadow">
+
+         <div class="linkPart" [routerLink]="['/home']">
+            <a data-toggle="tooltip" data-placement="right" title="Home"><img src="../../../assets/svg/home.svg" alt="" class="icon"></a>
+            <a [style.visibility] = "minVis">Home</a>
+        </div>
+        <div class="linkPart">
+            <a  data-toggle="tooltip" data-placement="right" title="About"><img src="../../../assets/svg/about.svg" alt="" class="icon"></a>
+            <a [style.visibility] = "minVis">About</a>
+        </div>
+        <div class="linkPart">
+            <a data-toggle="tooltip" data-placement="right" title="Team"><img src="../../../assets/svg/manager.svg" alt="" class="icon"></a>
+            <a  [style.visibility] = "minVis">Team</a>
+        </div>
+        <div class="linkPart">
+            <a data-toggle="tooltip" data-placement="right" title="Help"><img src="../../../assets/svg/faq.svg" alt="" class="icon"></a>
+            <a [style.visibility] = "minVis">Help</a>
+        </div>
+              
+    </mat-sidenav>
+    <mat-sidenav opened mode="side" position="end" class="rightSideNav" [style.visibility]="rightSideVis">
+        <div class="monthes">
+            <ul class="list-group">
+                <a  href="#" class="list-group-item list-group-item-action month-item">Jan</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Feb</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Mar</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Apr</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">May</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Jun</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Jul</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Aug</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Sep</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Oct</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Nov</a>
+                <a  href="#" class="list-group-item list-group-item-action month-item">Dec</a>
+            </ul>
+        </div>
+        <div class="imagesSlider">
+            <img src="http://via.placeholder.com/300x586" alt="">
+        </div>
+    </mat-sidenav>
+         
+    <mat-sidenav-content 
+    [style.margin-left.px]="sncMleft"
+    [style.margin-right.px]="sncMright"
+    class="my-scroll-area" ng-nicescroll nice-option="{cursorcolor: '#e2edff'}"
+     nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"
+    >
+            <app-pages></app-pages>
+            <app-home [style.display]="homeHide"></app-home>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<!--===============================SIDE NAV END============================-->

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input, ViewChildren } from '@angular/core';
+import { MenuComponent } from './Components/menu/menu.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  view = "hidden";
 }

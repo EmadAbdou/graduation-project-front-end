@@ -1,0 +1,111 @@
+<div class="container-fluid addPost">
+    <div class="row">
+        <div class="col-12">
+            <a [routerLink]="['/addPost']">
+                <div class="">
+                  <textarea class="" aria-label="With textarea" placeholder="Tap to add post ..."></textarea>
+                </div>
+            </a>
+        </div>
+      </div> 
+</div>
+<div class="post" *ngFor="let post of Posts , let i = index , let comment of Comments">
+  <div class="row">
+    <div class="col-12">
+      <div class="post-header">
+        <img src="http://via.placeholder.com/40x40" alt="" class="rounded-circle">
+        <a href="#"> Post Writer </a>
+
+        <ul class="options ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link drop" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="ion ion-gear-a icon"></i>
+                </a>
+                <div class="dropdownContain" aria-labelledby="navbarDropdown">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul class="options-list">
+                            <li  [routerLink]="['/edit-post']"
+                             [queryParams]="{ id : post.postId ,
+                                             name:post.name ,
+                                             age : post.age ,
+                                             birth: post.birth ,
+                                             city : post.city ,
+                                             status : post.status ,
+                                             description : post.description ,
+                                             url : post.url
+                                            }">
+                                <a class="drop-item">Edit</a>
+                            </li>
+                            <li  [routerLink]="['/post-details']">
+                                <a class="drop-item">Archive</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+      </div>
+      <a href="#">
+        <div class="row post-content">
+          <div class="col-5 img-part">
+            <img [src]="post.url" alt="" class="rounded mx-auto img-fluid">
+          </div>
+          <div class="col-7 info-part">
+            <ul>
+              <li>
+                <h6> {{ post.name }}</h6>
+              </li>
+              <li>
+                  <h6>{{ post.age }}</h6>
+              </li>
+              <li>
+                <h6>{{ post.birth }}</h6>
+              </li>
+              <li>
+                  <h6>{{ post.city }}</h6>
+              </li>
+              <li>
+                  <h6>{{ post.status }}</h6>
+              </li>
+              <li>
+                  <p>{{ post.description }}<a>see more</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </a>
+      <div class="count">
+        <p> {{ likes }} Likes and {{ comments }} Comment </p>
+      </div>
+      <div class="buttons">
+          <button type="button" class="btn btn-outline-secondary" 
+            (click)="like()"
+            [style.color]="likeColor"
+            >
+             <i class="ion ion-thumbsup post-icons"></i>
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="showComment()"><i class="ion ion-chatbubble post-icons"></i></button>
+          <button type="button" class="btn btn-outline-secondary"><i class="ion ion-android-share post-icons"></i></button>
+      </div>
+      <div class="writecomment" [style.display]="comment" >
+        <img src="http://via.placeholder.com/40x40" alt="" class="rounded-circle comment-pic">
+        <div class="input-group">
+          <input type="text" class="form-control comment-input" id="textInput"
+           aria-label="Small" 
+          aria-describedby="inputGroup-sizing-sm" 
+          (keydown)="addComment($event)"
+          [value]="commentText"
+          (input) = "commentText = $event.target.value"
+          placeholder="Write your comment ......">
+        </div>
+      </div>
+      <div class="addedcomment" [style.display]="commentAdded" *ngFor = "let comment of commentsText">
+          <img src="http://via.placeholder.com/40x40" alt="" class="rounded-circle comment-pic">
+          <a href="#" class="comment-name"> <h6> {{profileName}} </h6></a>
+          <p class="comment-txt" > {{ comment.body }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+

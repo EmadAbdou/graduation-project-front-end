@@ -1,0 +1,116 @@
+.signup {
+    position: relative;
+    float: left;
+    padding:10px;
+    width:90%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    background-color: rgb(243, 239, 239);
+    text-align: center;
+    display: flex;
+    margin-left: .6%;
+    margin-top: -1%;
+
+}
+
+@media(max-width:768px){
+    .signup {
+        position: relative;
+        float: left;
+        padding: 5px 5px 5px 5px ;
+        margin-left: .2%;
+        margin-top: 1%;
+        width:59%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 3px;
+        background-color: rgb(243, 239, 239);
+    }
+}
+
+.signup h4 {
+    color: #3d84a8;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+
+}
+
+.signup form {
+    display: block;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 20px 20px 0px 20px;
+}
+
+.signup .haveAcc {
+    float: right;
+    display: block;
+    width: 100%;
+    margin-left: 70%;
+}
+
+
+.signup  .btn {
+    display: block;
+    width: 40%;
+    height: 40px;
+    margin-left: 30%;
+    border-radius: 3px;
+    font-size: 18px;
+    background-color: none;
+    border: 1px solid #3d84a8;
+    text-decoration: none;
+    color: black;
+}
+
+.signup  .btn:hover {
+    background-color: #3d84a8;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+
+.signup p {
+    color: #3d84a8;
+    width: 100%;
+    padding: 13px 0px 0px 5px;
+}
+
+.signup .icons {
+    width: 100%;
+}
+
+.signup .icons a {
+    text-decoration: none;
+    text-decoration-color: white;
+    font-size: 20px;
+    color: rgb(33,101,131,.9);
+}
+
+.signup .icons a i {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #3d84a8;
+    padding: 10px 0px 0px 0px;
+    border-radius: 50%;
+}
+
+.fb:hover{
+	background-color: #3b5998;
+	color: #f5f8fa;
+	border: none;
+	transition: all .7s ease-in-out;
+}
+
+.tw:hover{
+	background-color: #1da1f2;
+	color: #f5f8fa;
+	border: none;
+	transition: all .7s ease-in-out;
+}
+
+.gp:hover{
+	background-color: #dd4b39;
+	color: #f5f8fa;
+	border: none;
+	transition: all .7s ease-in-out;
+}

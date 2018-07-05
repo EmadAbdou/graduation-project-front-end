@@ -1,0 +1,289 @@
+/* Post */
+.post {
+    margin-top: 1%;
+    position: relative;
+    float: left;
+    width:90%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    background-color: rgb(243, 239, 239);
+}
+
+@media(max-width:768px){
+    .post {
+        position: relative;
+        float: left;
+        width:60%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 3px;
+        background-color: rgb(243, 239, 239);
+    }
+}
+  
+
+.post-header {
+    display: inline-block;
+    width: 100%;
+    padding: 7px 0px 7px 10px ;
+    background-color: #3d84a8;
+}
+
+.post-header a {
+    padding-left: 7px;
+    font-weight: 500;
+    color: white;
+}
+
+.post-content {
+    padding-top:2%;
+}
+.post-content .img-part {
+    padding: 8px 0px 0px 30px;
+}
+
+.post-content .info-part {
+    padding: 7px 27px 0px 0px;
+}
+
+.post-content .info-part h6 {
+    padding: 2px;
+    color: #3d84a8;
+}
+
+.post-content .info-part p {
+    color: #3d84a8;
+}
+
+.count {
+    padding: 7px 10px 0px 25px;
+    color: #3d84a8;
+
+}
+
+.buttons {
+    background-color: #3d84a8;
+    padding: 0px 2px 2px 15px;
+    border-top: 1px solid rgb(194, 192, 192);
+
+}
+
+button {
+    background-color: #3d84a8;
+    color: white;
+    width: 32%;
+    padding: 4px;
+    border: none;
+}
+
+button:hover {
+    background-color:  rgb(194, 192, 192,.2);
+    outline: 0;
+}
+
+.post-icons {
+    font-size: 30px;
+    padding-top: 4px;
+    padding-right: 10px;
+}
+
+.writecomment {
+    padding: 0px 0px 5px 10px;
+
+}
+
+.addedcomment {
+    padding: 4px 0px 0px 10px;
+    border: 1px solid rgb(194, 192, 192,.5);
+}
+
+
+.comment-pic {
+    padding-right: 3px;
+    display: inline-block;
+}
+
+.comment-name {
+    display: inline-block;
+}
+
+.comment-txt {
+    display: inline-block;
+    padding-left: 7px;
+    width: 80%;
+    color: #3d84a8;
+}
+
+.input-group {
+    display: inline;
+}
+.comment-input {
+    display:inline-block;
+    width: 90%;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+ /* Post dropdown */
+
+.options {
+    display: inline-block;
+    position: absolute;
+    left: 90%;
+    top: -3%;
+}
+
+
+.dropdown {
+    padding-bottom: 2%;
+}
+
+
+.options li {
+	font: 13px Verdana, 'Lucida Grande';
+	cursor: pointer;
+	-webkit-transition: padding .05s linear;
+	-moz-transition: padding .05s linear;
+	-ms-transition: padding .05s linear;
+	-o-transition: padding .05s linear;
+    transition: padding .05s linear;
+    outline: 0;
+    display: inline-block;
+    outline: 0;
+
+}
+.options li .drop {
+    position: relative;
+    outline: 0;
+
+}
+.options-list > li {
+    display: inline-block;
+    outline: 0;
+
+}
+
+.options-list li a ,
+.options li a {
+	line-height: 80px;
+	padding: 0 10px;
+	height: 80px;
+    color: white;
+    text-decoration: none;
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+
+.drop-item {
+    height: 20px !important;
+    line-height: 0px !important;
+    margin-left: -15px !important;
+}
+
+.options-list li i ,
+.options li i {
+ 
+    font-size: 18px;
+    color: white;
+}
+
+.dropOut .triangle {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #3d84a8;
+	top: -8px;
+	left: 53%;
+	margin-left: -8px;
+}
+.dropdownContain {
+	width: 100px;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	margin-left: -69px; /* half of width */
+	top: -300px;
+}
+.dropOut {
+    width: 100px;
+    color: white;
+	background: #3d84a8;
+	float: left;
+	position: relative;
+	margin-top: 0px;
+	opacity: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	box-shadow: 0 1px 6px rgba(0,0,0,.15);
+	-webkit-transition: all .1s ease-out;
+	-moz-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	-o-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+
+.dropOut ul {
+	float: left;
+	padding: 10px 0;
+}
+.dropOut ul li {
+	text-align: left;
+	float: left;
+	width: 100px;
+	padding: 12px 0 10px 10px;
+	margin: 0px 10px;
+	color: white;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.dropOut ul li:hover {
+    width: 80px;
+    background: #216583;
+    
+}
+
+
+.options li:hover .dropdownContain { top: 65px; }
+.options li:hover .dropOut { opacity: 1; margin-top: 8px; }
+
+
+@media(max-width:768px){
+
+    .options {
+        display: inline-block;
+        position: absolute;
+        left: 85%;
+        top: -3%;
+    }
+    
+    .addedcomment {
+        padding: 4px 0px 0px 10px;
+        border: 1px solid rgb(194, 192, 192,.5);
+    }
+
+    .comment-txt {
+        display: block;
+        padding-left: 3px;
+        width: 90%;
+        color: #3d84a8;
+    }
+    
+    .comment-input {
+        display:inline-block;
+        width: 80%;
+        margin-top: 7px;
+        border-radius: 10px;
+    }
+
+
+}
+
