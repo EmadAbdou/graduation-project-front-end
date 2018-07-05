@@ -13,29 +13,36 @@ import 'rxjs/add/operator/map';
 export class AddPostService{
 
 
-server = 'http://127.0.0.1:8000/';
+server = 'http://localhost:8000/';
 headers: Headers = new Headers;
 options: any;
 
-constructor(private __http: Http) {
-   this.headers.append('Content-Type','multipart/form-data; boundary=----xruiitFormooundary7MA4YpxkTmZu0gW');//'application/json');//'multipart/form-data; boundary=----jhkjgjygwrqwjhhw'); //'application/x-www-form-urlencoded') ;//
-   this.headers.append('X-Requested-With', 'XMLHttpRequest');
-   this.options = new RequestOptions({headers: this.headers});
+constructor(private _http: Http) {
+   // this.headers.append('Content-Type','multipart/form-data; boundary=----xruiitFormooundary7MA4YpxkTmZu0gW');//'application/json');//'multipart/form-data; boundary=----jhkjgjygwrqwjhhw'); //'application/x-www-form-urlencoded') ;//
+   // this.headers.append('X-Requested-With', 'XMLHttpRequest');
+   // this.options = new RequestOptions({headers: this.headers});
 }
 
- AddPost(formData){
+ AddPost(formData) {
   console.log(formData);
-  this.__http.post(this.server + 'api/addPost', JSON.stringify(formData) ).map((response: Response) => {  
-    return response;       
-  });//.catch(this.handleError);   
-  console.log();
- 
+  let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.post(this.server + 'api/upload', {
+      'data': formData
+    }).toPromise()
+       .then(response => {
+         console.log(response);
+       })
+       .catch(error => {
+         console.log(error);
+       });
+
   }
 
-   private handleError(error: Response){  
-    console.error(error);  
-    return Observable.throw(error.json().error || 'Server error');  
-  }  
+   private handleError(error: Response){
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
+  }
 
 }
 

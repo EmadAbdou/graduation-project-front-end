@@ -21,6 +21,9 @@ import { EditPostComponent } from './Components/pages/edit-post/edit-post.compon
 import { EditProfileComponent } from './Components/pages/edit-profile/edit-profile.component';
 import { SearchResultComponent } from './Components/pages/search-result/search-result.component';
 import { FormsModule } from '@angular/forms';
+import { FileUploadModule } from 'ng2-file-upload';
+
+
 
 
 @NgModule({
@@ -48,6 +51,7 @@ import { FormsModule } from '@angular/forms';
     HttpModule,
     Material,
     FormsModule,
+    FileUploadModule,
     RouterModule.forRoot([
       { path : 'home' , component : HomeComponent},
       { path : 'login' , component : LoginComponent},
@@ -63,7 +67,7 @@ import { FormsModule } from '@angular/forms';
 
 
   ])
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
